@@ -6,7 +6,7 @@ In the [management guide](http://docs.aws.amazon.com/emr/latest/ManagementGuide/
 - the first one explains how to use the ssh tunnel to access to a single service at a time 
 - the second one explains how to set up a ssh tunnel to the cluster master node and access to  it via browser using the foxy-proxy firefox addon. 
 
-
+It is in this last point where you find some trouble with foxy-proxy settings. In fact the part where is explained how to configure foxy-proxy is old. So you need to following the rest of this guide! 
 
 ## Prerequisites
 - an Amazon AWS account
