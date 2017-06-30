@@ -25,6 +25,6 @@ ssh -i cluster_pem_file.pem -ND 8157 hadoop@master-public-dns-name
 ```
 > Note: 
 > the **N** argument sets OpenSSH to not execute commands on the remote machine.
-> the **D** argument sets a dynamic port forwarding which allows you to specify a local port used to forward data to all remote ports on the master node's local web server. Dynamic port forwarding creates a local SOCKS proxy listening on the port specified in the command. 
+> The **D** argument sets a dynamic port forwarding which allows you to specify a local port used to forward data to all remote ports on the master node's local web server. Dynamic port forwarding creates a local SOCKS proxy listening on the port specified in the command. 
 
 ## Workarounds
