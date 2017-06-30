@@ -14,13 +14,17 @@ It is in this last point where you find some trouble with foxy-proxy settings. I
 - foxy-proxy firefox addon [(link)](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/)
 
 ## First step
-After to create the amazon cluster, wait until the state will be **WAITING**.
+After create the amazon cluster, wait until it will be in a **WAITING** state.
 
-Following the amazon guide, the first step is to create the tunneling for the master node of the cluster. For that step we can follow the amazon guide.
+Following the amazon guide, the first step is to create the tunneling to the master node of the cluster from your machine. For that step we can follow the amazon guide.
+
+So, run the following shell command:
 
 ```bash
 ssh -i cluster_pem_file.pem -ND 8157 hadoop@master-public-dns-name
 ```
-
+> Note: 
+> the **N** argument sets OpenSSH to not execute commands on the remote machine.
+> the **D** argument sets a dynamic port forwarding which allows you to specify a local port used to forward data to all remote ports on the master node's local web server. Dynamic port forwarding creates a local SOCKS proxy listening on the port specified in the command. 
 
 ## Workarounds
