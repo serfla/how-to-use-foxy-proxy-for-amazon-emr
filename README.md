@@ -6,7 +6,7 @@ In the [management guide](http://docs.aws.amazon.com/emr/latest/ManagementGuide/
 - the first one explains how to use the ssh tunnel to access to a single service at a time 
 - the second one explains how to set up a ssh tunnel to the cluster master node and access to  it via browser using the foxy-proxy firefox addon. 
 
-It is in this last point where you find some trouble with foxy-proxy settings. In fact the part where is explained how to configure foxy-proxy is old. So you need to following the rest of this guide! 
+It is in this last point where you find some trouble with foxy-proxy settings. In fact the part where is explained how to configure foxy-proxy is not clear. 
 
 ## Prerequisites
 - an Amazon AWS account
@@ -14,4 +14,13 @@ It is in this last point where you find some trouble with foxy-proxy settings. I
 - foxy-proxy firefox addon [(link)](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/)
 
 ## First step
+After to create the amazon cluster, wait until the state will be **WAITING**.
 
+Following the amazon guide, the first step is to create the tunneling for the master node of the cluster. For that step we can follow the amazon guide.
+
+```bash
+ssh -i cluster_pem_file.pem -NS 8157 hadoop@master-public-dns-name
+```
+
+
+## Workarounds
