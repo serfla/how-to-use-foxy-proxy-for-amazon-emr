@@ -19,7 +19,7 @@ After to create the amazon cluster, wait until the state will be **WAITING**.
 Following the amazon guide, the first step is to create the tunneling for the master node of the cluster. For that step we can follow the amazon guide.
 
 ```bash
-ssh -i cluster_pem_file.pem -NS 8157 hadoop@master-public-dns-name
+ssh -i cluster_pem_file.pem -ND 8157 hadoop@master-public-dns-name
 ```
 
 
