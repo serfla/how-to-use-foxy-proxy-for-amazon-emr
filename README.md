@@ -1,3 +1,4 @@
+
 # How to use foxy-proxy addon to view Web Interfaces hosted on Amazon EMR Cluster
 This guide aims to support the users, who use the Amazon Elastic Map Reduce service, to access at the hadoop tools using foxy-proxy firefox addon.
 
@@ -21,10 +22,22 @@ Following the amazon guide, the first step is to create the tunneling to the mas
 So, run the following shell command:
 
 ```bash
-ssh -i cluster_pem_file.pem -ND 8157 hadoop@master-public-dns-name
+ssh -i myPem_file.pem -ND 8157 hadoop@master-public-dns-name
 ```
-> Note: 
-> the **N** argument sets OpenSSH to not execute commands on the remote machine.
-> The **D** argument sets a dynamic port forwarding which allows you to specify a local port used to forward data to all remote ports on the master node's local web server. Dynamic port forwarding creates a local SOCKS proxy listening on the port specified in the command. 
+
+
+> Notes: 
+- If the port number is already used in your system or is belong to the reserved range ports, the ssh command returns a error status.
+- The **N** argument sets OpenSSH to not execute commands on the remote machine.
+- The **D** argument sets a dynamic port forwarding which allows you to specify a local port used to forward data to all remote ports on the master node's local web server. Dynamic port forwarding creates a local SOCKS proxy listening on the port specified in the command. 
+
+## Set up Foxy-proxy
+
+Ok, now, we are going to set up the foxy-proxy addon, in order to we can access to amazon web interfaces.
+
+After the cluster is ready to use, under the section **Connection** will be appear a link **Enable web connection**
+
+![alt text](http://docs.aws.amazon.com/emr/latest/ManagementGuide/images/console-connect-tunnel-off.png "Enable web connection")
+
 
 ## Workarounds
