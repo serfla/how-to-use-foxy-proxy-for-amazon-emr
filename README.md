@@ -78,7 +78,7 @@ You should see somethings like this:
 6. In the **URL or URL template** select **Import**
 7. Browse to the location of **foxyproxy-settings.xml**, select the file, and choose Open.
 8. Choose OK and restart Firefox.
-9. When Firefox restarts, in the FoxyProxy Standard dialog, for Select Mode, choose Use proxies based on their pre-defined patterns and priorities.
+9. When Firefox restarts, in the FoxyProxy Standard dialog, for Select Mode, choose **Use proxies based on their pre-defined patterns and priorities**.
 10. Choose Close.
 
 To open the web interfaces, in your browser's address bar, type **master-public-dns** followed by the port number or URL.
