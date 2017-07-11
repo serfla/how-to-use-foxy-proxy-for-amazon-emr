@@ -35,9 +35,33 @@ ssh -i myPem_file.pem -ND 8157 hadoop@master-public-dns-name
 
 Ok, now, we are going to set up the foxy-proxy addon, in order to we can access to amazon web interfaces.
 
-After the cluster is ready to use, under the section **Connection** will be appear a link **Enable web connection**
+After the cluster is ready to use, under the section **Connection** will appear a link **Enable web connection**, which will show you some informations about ssh tunneling and some foxyproxy settings as xml code.
 
 ![alt text](http://docs.aws.amazon.com/emr/latest/ManagementGuide/images/console-connect-tunnel-off.png "Enable web connection")
 
+After to open the Enable Web Connection link, copy the xml code and paste it in a file named **foxyproxy-settings.xml** previously creating with a text editor.
+You should see somethings like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<foxyproxy>
+    <proxies>
+        <proxy name="emr-socks-proxy" id="2322596116" notes="" fromSubscription="false" enabled="true" mode="manual" selectedTabIndex="2" lastresort="false" animatedIcons="true" includeInCycle="true" color="#0055E5" proxyDNS="true" noInternalIPs="false" autoconfMode="pac" clearCacheBeforeUse="false" disableCache="false" clearCookiesBeforeUse="false" rejectCookies="false">
+            <matches>
+                <match enabled="true" name="*ec2*.amazonaws.com*" pattern="*ec2*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*ec2*.compute*" pattern="*ec2*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="10.*" pattern="http://10.*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*10*.amazonaws.com*" pattern="*10*.amazonaws.com*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*10*.compute*" pattern="*10*.compute*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*.compute.internal*" pattern="*.compute.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+                <match enabled="true" name="*.ec2.internal*" pattern="*.ec2.internal*" isRegEx="false" isBlackList="false" isMultiLine="false" caseSensitive="false" fromSubscription="false" />
+            </matches>
+            <manualconf host="localhost" port="8157" socksversion="5" isSocks="true" username="" password="" domain="" />
+        </proxy>
+    </proxies>
+</foxyproxy>
+```
+
+> Pay attention to set the **port** attribute value of **manualconf** tag with port number used for the ssh tunneling.
 
 ## Workarounds
