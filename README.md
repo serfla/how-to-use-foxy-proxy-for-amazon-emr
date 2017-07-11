@@ -84,4 +84,7 @@ You should see somethings like this:
 To open the web interfaces, in your browser's address bar, type **master-public-dns** followed by the port number or URL.
 
 For a complete list of web interfaces on the master node, see [View Web Interfaces Hosted on Amazon EMR Clusters](http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html).
+
 ## Workarounds
+
+To avoid all this stuffs and settings, you can manage the **Security Group** in order to permit as Inbound request, all kinds of traffic for all (or only for the your) IP addresses. After that, you can assign this Security Group at all node of cluster (inclusing the master node) and you will see the hadoop web interfaces. 
