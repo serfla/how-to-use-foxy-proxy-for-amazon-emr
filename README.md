@@ -14,7 +14,7 @@ It is in this last point where you find some trouble with foxy-proxy settings. I
 - a ssh-client (for windows users the equivalent is [PuTTY](http://www.putty.org/)
 - foxy-proxy firefox addon [(link)](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/)
 
-## First step
+## SSH Tunneling
 After create the amazon cluster, wait until it will be in a **WAITING** state.
 
 Following the amazon guide, the first step is to create the tunneling to the master node of the cluster from your machine. For that step we can follow the amazon guide.
