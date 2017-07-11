@@ -64,4 +64,24 @@ You should see somethings like this:
 
 > Pay attention to set the **port** attribute value of **manualconf** tag with port number used for the ssh tunneling.
 
+1. Choose Firefox > Add-ons.
+
+2. On the **Add-ons** tab, to the right of FoxyProxy Standard, choose **Options**.
+
+3. In the FoxyProxy Standard dialog, choose **New proxy**
+4. In **Generals** tab, type the label (name) which identify the new proxy configuration. 
+5. In the **Proxy details** tab, select **Manual proxy settings** and set-up the following fields:
+    - **server name/IP address**: localhost
+    - **port**: insert the port using for the ssh tunneling (**8157** in this example). 
+    - check **SSL proxy?** and **Proxy SOCKS** boxes. 
+    - verify if **SOCKS v5** is selected.
+6. In the **URL or URL template** select **Import**
+7. Browse to the location of **foxyproxy-settings.xml**, select the file, and choose Open.
+8. Choose OK and restart Firefox.
+9. When Firefox restarts, in the FoxyProxy Standard dialog, for Select Mode, choose Use proxies based on their pre-defined patterns and priorities.
+10. Choose Close.
+
+To open the web interfaces, in your browser's address bar, type **master-public-dns** followed by the port number or URL.
+
+For a complete list of web interfaces on the master node, see [View Web Interfaces Hosted on Amazon EMR Clusters](http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-web-interfaces.html).
 ## Workarounds
